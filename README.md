@@ -1,2 +1,2 @@
 # Black-jack
-A black-jack browser game
+Gioco web browser, sviluppato con node.js in collaborazione con Silvio Ronca.
