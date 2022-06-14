@@ -8,7 +8,74 @@ let server = http.createServer(app);
 var io=socketIO(server);
 var mysql = require('mysql');
 const fs = require("fs");
-const carte_dagioco = require('./carte');
+
+let c1 ={nome:"asso_cuori",valore:11,path:"immagini/c1.jpg"}
+let c1_10 ={nome:"asso_cuori",valore:11,path:"immagini/c1.jpg"}
+let c2 ={nome:"due_cuori",valore:2,path:"immagini/c2.jpg"}
+let c3 ={nome:"tre_cuori",valore:3,path:"immagini/c3.jpg"}
+let c4 ={nome:"quattro_cuori",valore:4,path:"immagini/c4.jpg"}
+let c5 ={nome:"cinque_cuori",valore:5,path:"immagini/c5.jpg"}
+let c6 ={nome:"sei_cuori",valore:6,path:"immagini/c6.jpg"}
+let c7 ={nome:"sette_cuori",valore:7,path:"immagini/c7.jpg"}
+let c8 ={nome:"otto_cuori",valore:8,path:"immagini/c8.jpg"}
+let c9 ={nome:"nove_cuori",valore:9,path:"immagini/c9.jpg"}
+let c10 ={nome:"dieci_cuori",valore:10,path:"immagini/c10.jpg"}
+let cj ={nome:"jack_cuori",valore:10,path:"immagini/cj.jpg"}
+let cq ={nome:"donna_cuori",valore:10,path:"immagini/cq.jpg"}
+let ck ={nome:"kappa_cuori",valore:10,path:"immagini/ck.jpg"}
+
+
+let q1 ={nome:"asso_quadri",valore:11,path:"immagini/q1.jpg"}
+let q1_10 ={nome:"asso_quadri",valore:11,path:"immagini/q1.jpg"}
+let q2 ={nome:"due_quadri",valore:2,path:"immagini/q2.jpg"}
+let q3 ={nome:"tre_quadri",valore:3,path:"immagini/q3.jpg"}
+let q4 ={nome:"quattro_quadri",valore:4,path:"immagini/q4.jpg"}
+let q5 ={nome:"cinque_quadri",valore:5,path:"immagini/q5.jpg"}
+let q6 ={nome:"sei_quadri",valore:6,path:"immagini/q6.jpg"}
+let q7 ={nome:"sette_quadri",valore:7,path:"immagini/q7.jpg"}
+let q8 ={nome:"otto_quadri",valore:8,path:"immagini/q8.jpg"}
+let q9 ={nome:"nove_quadri",valore:9,path:"immagini/q9.jpg"}
+let q10 ={nome:"dieci_quadri",valore:10,path:"immagini/q10.jpg"}
+let qj ={nome:"jack_quadri",valore:10,path:"immagini/qj.jpg"}
+let qq ={nome:"donna_quadri",valore:10,path:"immagini/qq.jpg"}
+let qk ={nome:"kappa_quadri",valore:10,path:"immagini/qk.jpg"}
+
+
+let p1 ={nome:"asso_picche",valore:11,path:"immagini/p1.jpg"}
+let p1_10 ={nome:"asso_picche",valore:11,path:"immagini/p1.jpg"}
+let p2 ={nome:"due_picche",valore:2,path:"immagini/p2.jpg"}
+let p3 ={nome:"tre_picche",valore:3,path:"immagini/p3.jpg"}
+let p4 ={nome:"quattro_picche",valore:4,path:"immagini/p4.jpg"}
+let p5 ={nome:"cinque_picche",valore:5,path:"immagini/p5.jpg"}
+let p6 ={nome:"sei_picche",valore:6,path:"immagini/p6.jpg"}
+let p7 ={nome:"sette_picche",valore:7,path:"immagini/p7.jpg"}
+let p8 ={nome:"otto_picche",valore:8,path:"immagini/p8.jpg"}
+let p9 ={nome:"nove_picche",valore:9,path:"immagini/p9.jpg"}
+let p10 ={nome:"dieci_picche",valore:10,path:"immagini/p10.jpg"}
+let pj ={nome:"jack_picche",valore:10,path:"immagini/pj.jpg"}
+let pq ={nome:"donna_picche",valore:10,path:"immagini/pq.jpg"}
+let pk ={nome:"kappa_picche",valore:10,path:"immagini/pk.jpg"}
+
+let f1 ={nome:"asso_fiori",valore:11,path:"immagini/f1.jpg"}
+let f1_10 ={nome:"asso_fiori",valore:11,path:"immagini/f1.jpg"}
+let f2 ={nome:"due_fiori",valore:2,path:"immagini/f2.jpg"}
+let f3 ={nome:"tre_fiori",valore:3,path:"immagini/f3.jpg"}
+let f4 ={nome:"quattro_fiori",valore:4,path:"immagini/f4.jpg"}
+let f5 ={nome:"cinque_fiori",valore:5,path:"immagini/f5.jpg"}
+let f6 ={nome:"sei_fiori",valore:6,path:"immagini/f6.jpg"}
+let f7 ={nome:"sette_fiori",valore:7,path:"immagini/f7.jpg"}
+let f8 ={nome:"otto_fiori",valore:8,path:"immagini/f8.jpg"}
+let f9 ={nome:"nove_fiori",valore:9,path:"immagini/f9.jpg"}
+let f10 ={nome:"dieci_fiori",valore:10,path:"immagini/f10.jpg"}
+let fj ={nome:"jack_fiori",valore:10,path:"immagini/fj.jpg"}
+let fq ={nome:"donna_fiori",valore:10,path:"immagini/fq.jpg"}
+let fk ={nome:"kappa_fiori",valore:10,path:"immagini/fk.jpg"}
+
+
+var carte=[c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,cj,cq,ck,q1,q2,
+  q3,q4,q5,q6,q7,q8,q9,q10,qj,qq,qk,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,pj,pq,pk,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,fj,fq,fk]
+
+const carte_dagioco = carte;
 
 
 
@@ -70,9 +137,9 @@ function mescola(array) {
 
 
 function mischiamazzi(){
-    mazzo1 = mescola(carte_dagioco.carte.concat(carte_dagioco.carte)); 
-    mazzo2 = mescola(carte_dagioco.carte.concat(carte_dagioco.carte)); 
-    mazzo3 = mescola(carte_dagioco.carte.concat(carte_dagioco.carte)); 
+    mazzo1 = mescola(carte_dagioco.concat(carte_dagioco)); 
+    mazzo2 = mescola(carte_dagioco.concat(carte_dagioco)); 
+    mazzo3 = mescola(carte_dagioco.concat(carte_dagioco)); 
    iteratore=103
    
 }
