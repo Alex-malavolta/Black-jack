@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+ 
+    <title>welcome gamer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+
+  <style>
+    body {
+    background-image:url("http://localhost:8080/immagini/sfondo.jpg");
+    background-color: #2fd12c;
+    background-position:center;
+    background-size:cover;
+    
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Roboto,arial,sans-serif;
+    font-family: 'Dancing Script', cursive!important;
+  }
+  
+  .container {
+      padding: 110px;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #ffffff!important;
+      opacity: 1; /* Firefox */
+      font-size:18px!important;
+  }
+  .form-login {
+      background-color: rgba(0,0,0,0.55);
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 15px;
+      border-color:#d2d2d2;
+      border-width: 5px;
+      color:white;
+      box-shadow:0 1px 0 #cfcfcf;
+  }
+  .form-control{
+      background:transparent!important;
+      color:white!important;
+      font-size: 18px!important;
+  }
+  h1{
+      color:white!important;
+  }
+  h4 { 
+   border:0 solid #fff; 
+   border-bottom-width:1px;
+   padding-bottom:10px;
+   text-align: center;
+  }
+  
+
+  </style>
+  <body id="body">
+        <!--<form id='message-form'>
+          <input name='message' type="text"placeholder="Message"autofocus autocomplete="off"/>
+          <button >Send</button>
+        </form>-->
+ 
+        <!-- Page Content -->
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-2">
+      <h6 class="text-start text-white">welcome</h6>
+      <h6 class=" text-start text-white" id="utente"></h6>
+      <br>
+      <br>
+      <div id="logtrue" style="display:none;">
+      <p class="text-white">Utenti online</p>
+      <div class="select">
+        <select class="form-select" id="select_box" name="slct" data-live-search="true">
+        </select>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary btn-sm" onclick="aggiornaelenco()">aggiorna elenco</button>
+      </div>
+    </div>
+
+    <div class="col-8">
+      
+      <div id="gameDiv" style="display:none;">
+        <br><br><br>
+        <div class="card-group">
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img id="dealer_2"src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img id="dealer_coperta" src="immagini/posteriore.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img id="dealer_scoperta" src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img id="dealer_1"src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <img id="fish"src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img id="carta4" src="immagini/tavolo.jpg" height="150" class="card-img-top" alt="..."><!--carta eventuale-->
+          </div>
+          <div class="card">
+            <img id="carta1" src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img id="carta2"  src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+          <div class="card">
+            <img id="carta3"src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="..."><!--carta eventuale-->
+          </div>
+          <div class="card">
+            <img src="immagini/tavolo.jpg" height="150"class="card-img-top" alt="...">
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+      <div id="loggato">
+
+      <div class="d-grid gap-2 col-6 mx-auto"><br><br>
+        <div id="room" style="display:none;">
+          <p class="text-white">Scegli una stanza dove giocare</p>
+          <div class="select">
+            <select class="form-select" id="select_box_room" name="slct" data-live-search="true">
+            </select>
+            </div>
+            <br>
+          </div>
+        <br>
+        <button  id="btnChallenge"class="btn btn-warning" type="button" onclick="Gioca()">Gioca ad un tavolo</button>
+        <br>
+        <br>
+        <div id="ric_c">
+        <p class="p-3 mb-2 bg-info text-center">Inserisci quanti crediti vuoi ricaricare</p>
+        <input type="text" class="form-control" id="ricaricacre">
+        <br>
+        <button  id="ricarica"class="btn btn-success" type="button" onclick="ricaricaCred()">ricarica i tuoi crediti</button>
+      </div>
+      </div>
+      
+    </div>
+    <br><br><br><br><br>
+      <div id="formlog" class="justify-content-evenly">
+        <div  id="login">
+          <form action="/" method="get">
+              <div class="form-login"></br>
+                <h4>Login or Registration</h4>
+                
+                </br>
+                
+                <input  type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" required>
+                
+                </br></br>
+                <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" required >
+                </br></br>
+                
+                        <span class="group-btn">
+                          <button id="btnLogin" type="button" class="btn btn-danger btn-md" onclick="funzioneLogin()">Login</button>
+                          <button id="btnSign" type="button" class="btn btn-danger btn-md" onclick="funzioneRegistrati()">Registrati</button>
+                           
+                        </span>
+                
+            </div>
+          </form>
+        
+    </div>
+    </div>
+    
+    </div>
+
+    <div class="col-2">
+      <div   class=" d-md-flex justify-content-md-end">
+        <button id="lgout" type="button" class="btn btn-dark" onclick="funzionelogout()" style="display:none;">LOGOUT</button>
+      </div>
+      <br><br><br><br>
+      <h6 id="cre" class="text-white" style="display:none;"></h6>
+      <div id="bottoni_gioco" style="display:none;">
+
+        
+        
+        
+        <br><br><br><br><br><br><br><br>
+        
+        <p class="text-white"id="p_puntata"></p>
+        <button id="carta+" type="button" class="btn btn-warning btn-lg"  onclick="carta()">CARTA</button><br><br>
+        
+        <button type="button" class="btn btn-warning btn-lg" onclick="stop()">STOP</button>
+      
+      
+      </div>
+      
+
+    </div>
+
+  </div>
+  
+  
+  
+  
+  <!--footer-->
+  <div class="footer text-white text-center">
+      <p>© 2022 || Design by Alex Malavolta & Silvio Ronca</p>
+      
+  </div>
+  <!--//footer-->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket=io()
+loggato.style.display = "none";
+var body=document.getElementById("body");
+//body.onunload = function(){alert("ciaooooo")};
+var formlog = document.getElementById("formlog");
+var username = document.getElementById('userName');
+var nuovicred = document.getElementById('ricaricacre');
+var psw = document.getElementById('userPassword');
+var select_box = document.getElementById("select_box");
+var btnChallenge = document.getElementById("btnChallenge");
+var gameDiv = document.getElementById("gameDiv");
+var lgout = document.getElementById("lgout");
+var stanza = document.getElementById("room");
+var box_room = document.getElementById("select_box_room");
+var bottoni = document.getElementById("bottoni_gioco");
+var puntata = document.getElementById("p_puntata");
+var cred_inseriti = document.getElementById("puntata");
+var btn_carta = document.getElementById('carta+');
+var btn_carta_nuova = document.getElementById('carta+');
+var fish_possedute=0;
+var pun=document.getElementById("fish");
+var room_scelta;
+
+let person = 0;
+var carta_cop;
+var carta_scop;
+var carta_dealer1="immagini/tavolo.jpg";
+var carta_dealer2="immagini/tavolo.jpg";
+var carta_1ut;
+var carta_2ut;
+var carta_3ut;
+var carta_4ut;
+var carta_plus
+
+
+var val_carta_cop=0;
+var val_carta_scop=0;
+var val_carta_dealer1=0;
+var val_carta_dealer2=0;
+var val_carta_1ut=0;
+var val_carta_2ut=0;
+var val_carta_3ut=0;
+var val_carta_4ut=0;
+var val_carta_plus=0;
+var iteratore_carte=2;
+
+
+
+ //celle corrispondenti alle carte 
+ var dealer_c = document.getElementById('dealer_coperta');
+  var dealer_s = document.getElementById('dealer_scoperta');
+  var c_1 = document.getElementById('carta1');
+  var c_2 = document.getElementById('carta2');
+  var c_3 = document.getElementById('carta3');
+  var c_4 = document.getElementById('carta4');
+  var sf="immagini/sfondo.jpg"
+
+var roomName;
+// connection with server
+socket.on('connect', function(){
+  console.log('Connected to Server')
+ 
+});
+
+
+function funzioneLogin(){
+
+  if(username.value==""||psw.value==""){
+    alert("assicurati di aver compilato tutti i campi")
+  }else{
+    //emetto i parametri della login
+    socket.emit('login', {
+    user:username.value,
+    pass:psw.value
+    });
+  }
+  // message listener from server
+  socket.on('login', function(message){
+  if(message.text=="log errato, riprova"){
+    alert(message.text)
+  }
+  
+  if(message.text=="log ok"){
+    formlog.style.display = "none";
+    logtrue.style.display = "block";
+    loggato.style.display = "block";
+    stanza.style.display = "block";
+    lgout.style.display = "block";
+    cre.style.display = "block";
+    document.getElementById("utente").innerHTML = username.value;
+
+    socket.emit('select_fish', {
+        user: username.value
+      });
+
+    socket.on('select_fish', function(datas){
+      var cred=datas.text;
+      fish_possedute=cred;
+      document.getElementById("cre").innerHTML = "HAI: "+ cred+" CREDITI";
+
+      
+      
+    });
+
+  }
+  });
+
+}
+
+function funzionelogout(){
+
+  socket.emit('logout', {
+  text:username.value
+  });
+
+  // message listener from server
+  socket.on('logout', function(message){
+  alert(message.text)
+  });
+  reset_tavolo_logout();
+  formlog.style.display = "block";
+  loggato.style.display = "none";
+  logtrue.style.display = "none";
+  gameDiv.style.display = "none";
+  bottoni.style.display = "none";
+  lgout.style.display = "none";
+  btnChallenge.style.display = "block";
+  ric_c.style.display = "block";
+  cre.style.display = "none";
+  document.getElementById("utente").innerHTML = "";
+
+}
+
+function funzioneRegistrati(){
+
+  if(username.value==""||psw.value==""){
+    alert("assicurati di aver compilato  tutti i campi")
+  }else{
+    //emetto i parametri della login
+    socket.emit('registrazione', {
+    user:username.value,
+    pass:psw.value
+    });
+  }
+  // message listener from server
+  socket.on('registrazione', function(message){
+  alert(message.text)
+  });
+}
+
+
+function aggiornaelenco(){
+  socket.emit('updateList', {});
+  //aggiorno la lista di utenti online
+  socket.on('updateList', function(data){
+    // for(i=0;i<select_box.option.length;i++){
+    //     select_box.remove(i);
+    //   }
+      var list = JSON.parse(data.userList);
+      select_box.innerHTML = "";
+      select_box.options.length=0; 
+      
+      
+      for (ut in list) {
+          //Controllo di non aggiungere il nome del seguente utente
+         
+          if(list[ut] !== username.value) { 
+            select_box.add( new Option( list[ut] ) ); 
+          }
+      }
+  });
+}
+
+
+
+
+//aggiorno la lista di stanze
+socket.emit('updateList_room', {});
+socket.on('updateList_room', function(data){
+    var list = JSON.parse(data.roomList);
+    box_room.innerHTML = "";
+
+    for (i = 0; i < list.length; i++) {
+        
+        
+            var option = document.createElement("option");
+            option.text = list[i];
+            option.value = list[i];
+            box_room.add(option);
+        
+    }
+});
+
+function Gioca(){
+ btnChallenge.style.display = "none";
+ ric_c.style.display = "none";
+ btn_carta.parentNode.appendChild(btn_carta_nuova);
+ stanza.style.display = "none";
+ room_scelta = box_room.options[box_room.selectedIndex].value;
+ socket.emit('select_fish', {
+        user: username.value
+      });
+
+    socket.on('select_fish', function(datas){
+      var cred=datas.text;
+      fish_possedute=cred;
+      document.getElementById("cre").innerHTML = "HAI: "+ cred+" CREDITI";
+
+      
+      
+    });
+    
+    setTimeout(function(){
+
+  socket.emit('giochiamo', {
+    user: username.value,
+    stan: room_scelta
+  });
+
+   gameDiv.style.display = "block";
+   bottoni.style.display = "block";
+
+   
+
+  alert("Inizio round")
+  iteratore_carte=2;
+  
+
+      
+
+    person= faiUnaPuntata();
+
+    if(person==50){
+      pun.src="immagini/50.jpg";
+    }
+    if(person==100){
+      pun.src="immagini/100.jpg";
+    }
+    if(person==500){
+      pun.src="immagini/500.jpg";
+    }
+    if(person==1000){
+      pun.src="immagini/1000.jpg";
+    }
+    if(person==2000){
+      pun.src="immagini/2000.jpg";
+    }
+    if(person==5000){
+      pun.src="immagini/5000.jpg";
+    }
+    if(person>5000){
+      pun.src="immagini/all.jpg";
+    }
+
+    socket.on('carte_mazziere', function(datas){
+      carta_cop=datas.mazziere_coperta;
+      carta_scop=datas.mazziere_carta;
+      val_carta_cop=datas.mazziere_coperta_valore;
+      val_carta_scop=datas.mazziere_carta_valore;
+      document.getElementById("dealer_coperta").src="immagini/posteriore.jpg";
+      document.getElementById("dealer_scoperta").src=carta_scop;
+      
+    });
+
+    socket.on('carte', function(datas){
+      carta_1ut=datas.giocatore_carta1;
+      carta_2ut=datas.giocatore_carta2;
+      val_carta_1ut=datas.giocatore_carta1_valore;
+      val_carta_2ut=datas.giocatore_carta2_valore;
+
+      document.getElementById("carta1").src=carta_1ut;
+      document.getElementById("carta2").src=carta_2ut;
+      //check_black_jack();
+    });
+    
+  }, 500);
+  
+}
+function ReplacingImage(c,imm){c.src=imm}
+
+function faiUnaPuntata(){
+
+  person = prompt("Inserisci la tua puntata min 50 (50-100-500-1000-2000-5000)", "");
+  
+  let text;
+  if (person == null || person == "") {
+    alert("puntata non effettuata");
+    reset_tavolo();
+  } else {
+
+    if(person<50){
+      alert("puntata troppo bassa")
+      faiUnaPuntata();
+    }
+
+    if(person>fish_possedute){
+      alert("non possiedi cosi tanti crediti")
+      if(fish_possedute==0){
+        funzionelogout();
+      }else{
+        faiUnaPuntata();
+      }
+
+      
+
+    }
+    
+
+    return person;
+      
+    
+  }
+
+}
+
+function check21(){
+  if((val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)>21){
+    socket.emit('puntata_persa', {
+        user: username.value,
+        pun: person,
+      });
+    alert("hai perso la mano,hai sballato")
+
+    reset_tavolo();
+    
+  } 
+}
+
+function carta(){
+  
+  if(iteratore_carte<=0){
+    alert("hai finito la richiesta di carte");
+    stop();
+  }else{
+  iteratore_carte=iteratore_carte-1;
+  socket.emit('dammiUnaCarta', {});
+  }
+ }
+ socket.on('dammiUnaCartanuova', function(dati){
+      
+       carta_plus=dati.giocatore_carta;
+       val_carta_plus=dati.giocatore_carta_valore;
+       if(val_carta_3ut==0){
+        val_carta_3ut=val_carta_plus;
+        document.getElementById("carta3").src=carta_plus;
+        setTimeout(function(){
+          check_asso();
+          check21();
+        }, 1000);
+
+      }else{
+        val_carta_4ut=val_carta_plus;
+        document.getElementById("carta4").src=carta_plus;
+        setTimeout(function(){
+          check_asso();
+          check21();
+        }, 1000);
+      }
+       
+  });
+
+function check_black_jack(){
+
+  if(val_carta_1ut==11&&val_carta_2ut==10||val_carta_1ut==10&&val_carta_2ut==11){
+
+    if(val_carta_cop==11&&val_carta_scop==10||val_carta_cop==10&&val_carta_scop==11){
+
+      alert("parità,sia tu che il dealer avete fatto black jack")
+      reset_tavolo();
+    }else{
+
+        socket.emit('puntata_vinta_black', {
+          user: username.value,
+          pun: person,
+        });
+      alert("hai vinto,hai fatto blackjack")
+      reset_tavolo();
+      
+    }
+    
+  }
+
+
+}
+function check_con_mazziere(){
+  document.getElementById("dealer_coperta").src=carta_cop;
+ // alert("check"+(val_carta_cop+val_carta_scop+val_carta_dealer1+val_carta_dealer2))
+
+  if(val_carta_cop+val_carta_scop+val_carta_dealer1+val_carta_dealer2<=14){
+    if(room_scelta=="stanza 1"){
+      
+      socket.emit('nuova_carta_mazziere1', {});
+
+      socket.on('nuova_carta_mazziere1', function(dati){
+        var nuovacarta=dati.mazziere_coperta;
+        var val_nuova_carta=dati.mazziere_coperta_valore;
+        
+          carta_dealer1=nuovacarta;
+          val_carta_dealer1=val_nuova_carta;
+          
+          document.getElementById("dealer_1").src=carta_dealer1;
+          document.getElementById("dealer_coperta").src=carta_cop;
+      
+      });
+ 
+    }
+    if(room_scelta=="stanza 2"){
+      
+      socket.emit('nuova_carta_mazziere2', {});
+
+      socket.on('nuova_carta_mazziere2', function(dati){
+        var nuovacarta=dati.mazziere_coperta;
+        var val_nuova_carta=dati.mazziere_coperta_valore;
+        
+          carta_dealer1=nuovacarta;
+          val_carta_dealer1=val_nuova_carta;
+          
+          document.getElementById("dealer_1").src=carta_dealer1;
+          document.getElementById("dealer_coperta").src=carta_cop;
+      
+      });
+ 
+    }
+    if(room_scelta=="stanza 3"){
+      
+      socket.emit('nuova_carta_mazziere3', {});
+
+      socket.on('nuova_carta_mazziere3', function(dati){
+        var nuovacarta=dati.mazziere_coperta;
+        var val_nuova_carta=dati.mazziere_coperta_valore;
+        
+          carta_dealer1=nuovacarta;
+          val_carta_dealer1=val_nuova_carta;
+          
+          document.getElementById("dealer_1").src=carta_dealer1;
+          document.getElementById("dealer_coperta").src=carta_cop;
+      
+      });
+ 
+    }
+  }
+
+  document.getElementById("dealer_coperta").src=carta_cop;
+  
+
+  //code before the pause
+  setTimeout(function(){
+
+    if(val_carta_cop+val_carta_scop+val_carta_dealer1+val_carta_dealer2>21){
+      alert("il dealer ha sballato: "+(val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)+"--"+(val_carta_cop+val_carta_scop+val_carta_dealer1+val_carta_dealer2));
+        socket.emit('puntata_vinta', {
+          user: username.value,
+          pun: person,
+        });
+        reset_tavolo();
+
+    }
+    else{
+
+      if((val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)<(val_carta_cop+val_carta_scop+val_carta_dealer1+val_carta_dealer2)){
+        socket.emit('puntata_persa', {
+            user: username.value,
+            pun: person,
+          });
+        alert("hai perso la mano,il mazzire ha carte piu alte: "+(val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)+"--"+(val_carta_cop+val_carta_scop+val_carta_dealer1+val_carta_dealer2))
+        reset_tavolo();
+    
+
+      }else{
+        socket.emit('puntata_vinta', {
+            user: username.value,
+            pun: person,
+          });
+        alert("hai vinto la mano: "+(val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)+"--"+(val_carta_cop+val_carta_scop+val_carta_dealer1+val_carta_dealer2))
+        reset_tavolo();
+      }
+
+    }
+  }, 2000);
+  
+
+
+}
+
+
+
+function check_asso(){
+  if(val_carta_1ut == 11){
+    if((val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)>21){
+      val_carta_1ut=1;
+    }
+  }
+
+  if(val_carta_2ut == 11){
+    if((val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)>21){
+      val_carta_2ut=1;
+    }
+  }
+
+ if(val_carta_3ut == 11){
+  if((val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)>21){
+    val_carta_3ut=1;
+  }
+ }
+ if(val_carta_4ut == 11){
+  if((val_carta_1ut+val_carta_2ut+val_carta_3ut+val_carta_4ut)>21){
+    val_carta_4ut=1;
+  }
+ }
+
+
+}
+
+function reset_tavolo(){
+   
+  document.getElementById("dealer_coperta").src="immagini/tavolo.jpg";
+  document.getElementById("dealer_scoperta").src="immagini/tavolo.jpg";
+  document.getElementById("dealer_1").src="immagini/tavolo.jpg";
+  document.getElementById("dealer_2").src="immagini/tavolo.jpg";
+  document.getElementById("carta1").src="immagini/tavolo.jpg";
+  document.getElementById("carta2").src="immagini/tavolo.jpg";
+  document.getElementById("carta3").src="immagini/tavolo.jpg";
+  document.getElementById("carta4").src="immagini/tavolo.jpg";
+  pun.src="immagini/tavolo.jpg";
+
+   person = 0;
+   carta_cop="";
+   carta_scop="";
+   carta_dealer1="";
+   carta_dealer2="";
+   carta_1ut="";
+   carta_2ut="";
+   carta_3ut="";
+   carta_4ut="";
+   carta_plus="";
+
+   val_carta_cop=0;
+   val_carta_scop=0;
+   val_carta_dealer1=0;
+   val_carta_dealer2=0;
+   val_carta_1ut=0;
+   val_carta_2ut=0;
+   val_carta_3ut=0;
+   val_carta_4ut=0;
+   val_carta_plus=0;
+
+   
+   Gioca();
+
+}
+function reset_tavolo_logout(){
+   
+   document.getElementById("dealer_coperta").src="immagini/tavolo.jpg";
+   document.getElementById("dealer_scoperta").src="immagini/tavolo.jpg";
+   document.getElementById("dealer_1").src="immagini/tavolo.jpg";
+   document.getElementById("dealer_2").src="immagini/tavolo.jpg";
+   document.getElementById("carta1").src="immagini/tavolo.jpg";
+   document.getElementById("carta2").src="immagini/tavolo.jpg";
+   document.getElementById("carta3").src="immagini/tavolo.jpg";
+   document.getElementById("carta4").src="immagini/tavolo.jpg";
+   pun.src="immagini/tavolo.jpg";
+ 
+    person = 0;
+    carta_cop="";
+    carta_scop="";
+    carta_dealer1="";
+    carta_dealer2="";
+    carta_1ut="";
+    carta_2ut="";
+    carta_3ut="";
+    carta_4ut="";
+    carta_plus="";
+ 
+    val_carta_cop=0;
+    val_carta_scop=0;
+    val_carta_dealer1=0;
+    val_carta_dealer2=0;
+    val_carta_1ut=0;
+    val_carta_2ut=0;
+    val_carta_3ut=0;
+    val_carta_4ut=0;
+    val_carta_plus=0;
+ 
+    
+ 
+ }
+
+function stop(){
+  check21();
+  check_con_mazziere();
+}
+
+// function chiusurapag(){
+
+//   if(username.value==""){
+//     window.close();
+//   }else{
+//     alert("ciaooooo")
+//     socket.emit('chiusurapag', {
+//     text:username.value
+//     });
+
+//   }
+  
+
+// }
+
+function ricaricaCred(){
+
+  socket.emit('ricarica', {
+    text:username.value,
+    c:nuovicred.value
+  });
+
+
+}
+
+
+</script>
